@@ -37,7 +37,8 @@ module ALU_unit(A, B, Control_in, ALU_Result, zero);
    default: begin ALU_Result = 32'd0; zero = 1'b0; end
   endcase
   end
-endmodule// All modules instantiate here...
+endmodule// All modules instantiated
+
 module top(clk, reset);
  input clk, reset;
  wire [31:0] pc_top, instruction_top, Rd1_top, Rd2_top, ImmExt_top, mux1_top, Sum_out_top, NextoPC_top, PCin_top, address_top, Memdata_top, WriteBack_top;
@@ -86,7 +87,8 @@ module top(clk, reset);
 
 // Mux
  Mux3 Memory_mux(.sel3(MemtoReg_top), .A3(address_top), .B3(Memdata_top), .Mux3_out(WriteBack_top));
-endmodule// Control Unit
+endmodule
+// Control Unit
 module Control_Unit(instruction, Branch, MemRead, MemtoReg, ALUOp, MemWrite, ALUSrc, RegWrite);
  input [6:0] instruction;
  output reg Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite;
