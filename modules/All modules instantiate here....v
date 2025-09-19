@@ -1,4 +1,5 @@
-// All modules instantiate here...
+// All modules instantiate here
+
 module top(clk, reset);
  input clk, reset;
  wire [31:0] pc_top, instruction_top, Rd1_top, Rd2_top, ImmExt_top, mux1_top, Sum_out_top, NextoPC_top, PCin_top, address_top, Memdata_top, WriteBack_top;
