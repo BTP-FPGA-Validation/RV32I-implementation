@@ -1,5 +1,6 @@
 name: Auto-combine modules on change
-
+permissions:
+  contents: write
 on:
   push:
     paths:
