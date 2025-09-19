@@ -1,4 +1,4 @@
-// All modules instantiate here
+// All modules instantiate
 
 module top(clk, reset);
  input clk, reset;
