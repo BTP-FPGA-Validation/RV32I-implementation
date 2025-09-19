@@ -17,6 +17,15 @@ jobs:
         run: |
           cat modules/*.v > rvsc.v
 
+      # - name: Commit and push if rvsc.v changed
+      #   env:
+      #     GH_PAT: ${{ secrets.GH_PAT }}
+      #   run: |
+      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      #     git config --global user.name "github-actions[bot]"
+      #     git add rvsc.v
+      #     git diff --cached --quiet || (git commit -m "Auto-update combined rvsc.v [skip ci]" && git push)
+
       - name: Commit and push if rvsc.v changed
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -24,5 +33,9 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
           git add rvsc.v
-          git diff --cached --quiet || (git commit -m "Auto-update combined rvsc.v [skip ci]" && git push)
-
+          git diff --cached --quiet || (
+            git commit -m "Auto-update combined rvsc.v [skip ci]" &&
+            git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${GITHUB_REPOSITORY}.git &&
+            git push origin HEAD:${GITHUB_REF#refs/heads/}
+          )
+      
