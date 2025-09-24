@@ -18,3 +18,4 @@ module Data_Memory(clk, reset, MemWrite, MemRead, read_address, Write_data, MemD
  end
  assign MemData_out = (MemRead) ? D_memory[word_index] : 32'd0;
 endmodule
+

@@ -8,3 +8,4 @@ module pc(clk, reset, pc_in, pc_out);
   else pc_out <= pc_in;
   end
 endmodule
+

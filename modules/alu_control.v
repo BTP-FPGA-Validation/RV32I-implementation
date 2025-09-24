@@ -1,3 +1,4 @@
+
 // ALU Control
 module ALU_Control(ALUOp, fun7, fun3, Control_out);
  input fun7;
@@ -16,3 +17,4 @@ module ALU_Control(ALUOp, fun7, fun3, Control_out);
   endcase
  end
 endmodule
+

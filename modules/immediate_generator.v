@@ -1,4 +1,5 @@
-// Immediate Generator
+
+ // Immediate Generator
  module ImmGen(Opcode, instruction, ImmExt);
  input [6:0] Opcode;
  input [31:0] instruction;
@@ -14,3 +15,4 @@ always @(*) begin
 end
 
  endmodule
+ 
